@@ -6,7 +6,6 @@ Krypta is a secure, high-fidelity, blueprint-themed cryptographic web utility de
 
 ## Features
 
-- **Aesthetic Cyber-Security Theme**: A dark navy blue dashboard featuring active cyber grid overlays, terminal monospace fonts, and interactive glassmorphic panels.
 - **Support for Alphabets and Digits**:
   - Uppercase letters (`A-Z`) are rotated within their 26-character set.
   - Lowercase letters (`a-z`) are rotated within their 26-character set.
@@ -45,8 +44,8 @@ Krypta_Encryptor_Decryptor/
 │   ├── style.css               # Blueprint cyber-security visual styling
 │   └── app.js                  # Frontend controllers and API communications
 │
-├── encryptor.py                # Humanized encryption module
-├── decryptor.py                # Humanized decryption module
+├── encryptor.py                # Encryption module
+├── decryptor.py                # Decryption module
 ├── main.py                     # FastAPI web server, validations, static route mounts
 │
 ├── Procfile                    # Railway startup command mapping
@@ -54,67 +53,6 @@ Krypta_Encryptor_Decryptor/
 ├── runtime.txt                 # Specifies the Python version runtime (3.11)
 └── README.md                   # Project documentation
 ```
-
----
-
-## How to Run Locally
-
-### Prerequisites
-Make sure you have Python 3.10+ installed.
-
-### 1. Install Dependencies
-Install the required packages specified in `requirements.txt`:
-```bash
-pip install -r requirements.txt
-```
-
-### 2. Start the FastAPI Server
-Run the application locally using Python directly:
-```bash
-python main.py
-```
-This runs the local development server at `http://127.0.0.1:8000`.
-
-### 3. Open in Browser
-Open your browser and navigate to:
-```text
-http://127.0.0.1:8000
-```
-
----
-
-## API Specifications
-
-Krypta exposes a single RESTful endpoint to handle cryptographic workloads:
-
-### **POST `/api/process`**
-
-- **Headers**: `Content-Type: application/json`
-- **Request Body**:
-  ```json
-  {
-    "text": "Hello World 123!",
-    "key": 3,
-    "action": "encrypt"
-  }
-  ```
-- **Success Response (200 OK)**:
-  ```json
-  {
-    "status": "success",
-    "original_text": "Hello World 123!",
-    "processed_text": "Khoor Zruog 456!"
-  }
-  ```
-- **Error Response (400 Bad Request)**:
-  ```json
-  {
-    "status": "error",
-    "message": "Invalid key value. Key must be an integer."
-  }
-  ```
-
----
 
 ## Deployment to Railway
 
