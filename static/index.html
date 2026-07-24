@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krypta - Caesar Cipher Tool</title>
+    <meta name="description" content="Krypta is a secure web utility to encrypt and decrypt messages using the Caesar Cipher technique.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Roboto+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="grid-overlay"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <span class="logo-icon">//</span>
+                <h1>KRYPTA <span class="accent-text">Caesar Cipher</span></h1>
+            </div>
+            <div class="status-panel">
+                <span class="status-dot pulsing"></span>
+                <span class="status-text">SECURE LINK ESTABLISHED</span>
+            </div>
+        </header>
+
+        <!-- Main Cryptographic Workstation (IPO Model) -->
+        <main class="workstation">
+            
+            <!-- INPUT ZONE -->
+            <section class="panel ipo-zone" id="input-zone">
+                <div class="panel-header">
+                    <span class="panel-number">01</span>
+                    <h2>Input Text</h2>
+                    <span class="panel-type-tag">Plaintext / Ciphertext</span>
+                </div>
+                <div class="panel-body">
+                    <label for="input-text" class="sr-only">Input Text</label>
+                    <textarea id="input-text" placeholder="Enter text here..." autocomplete="off"></textarea>
+                    <div class="panel-footer">
+                        <span id="char-counter">Chars: 0</span>
+                        <button type="button" id="clear-btn" class="text-btn">Clear Input</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROCESS ZONE -->
+            <section class="panel ipo-zone" id="process-zone">
+                <div class="panel-header">
+                    <span class="panel-number">02</span>
+                    <h2>Shift Key & Actions</h2>
+                    <span class="panel-type-tag">Process</span>
+                </div>
+                <div class="panel-body process-controls">
+                    <div class="key-control">
+                        <label for="shift-key" class="control-label">Shift Key (n):</label>
+                        <div class="number-input-wrapper">
+                            <button type="button" class="key-adjust-btn" id="key-dec" aria-label="Decrease key">-</button>
+                            <input type="number" id="shift-key" value="3" min="-9999" max="9999" step="1" required>
+                            <button type="button" class="key-adjust-btn" id="key-inc" aria-label="Increase key">+</button>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button type="button" class="btn btn-encrypt" id="encrypt-btn">
+                            <span class="btn-glow"></span>
+                            <span class="btn-text">[ ENCRYPT ]</span>
+                        </button>
+                        <button type="button" class="btn btn-decrypt" id="decrypt-btn">
+                            <span class="btn-glow"></span>
+                            <span class="btn-text">[ DECRYPT ]</span>
+                        </button>
+                    </div>
+
+                    <div class="diagnostic-screen">
+                        <div class="screen-row"><span class="label">Status:</span> <span id="diag-status" class="value text-success">IDLE</span></div>
+                        <div class="screen-row"><span class="label">Algorithm:</span> <span class="value">Caesar Cipher</span></div>
+                        <div class="screen-row"><span class="label">Mode:</span> <span id="diag-mode" class="value">NONE</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OUTPUT ZONE -->
+            <section class="panel ipo-zone" id="output-zone">
+                <div class="panel-header">
+                    <span class="panel-number">03</span>
+                    <h2>Output Result</h2>
+                    <span class="panel-type-tag">Result Data</span>
+                </div>
+                <div class="panel-body">
+                    <label for="output-text" class="sr-only">Output Result</label>
+                    <textarea id="output-text" readonly placeholder="Result will appear here..."></textarea>
+                    <div class="panel-footer">
+                        <span id="output-status">READY</span>
+                        <button type="button" id="copy-btn" class="text-btn">Copy to Clipboard</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
